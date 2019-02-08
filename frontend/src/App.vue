@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <v-app v-bind:style="styleObject">
-      <v-toolbar app color="primary" height=85 extension-height=50>
+      <v-toolbar app color="primary" height=110 extension-height=50>
         <v-flex xs1>
-          <v-img  v-bind:src="require('@/assets/logo-no-text.png')" width=80></v-img>
+          <v-img  v-bind:src="require('@/assets/logo.png')" width=80></v-img>
         </v-flex>
         <v-toolbar-title class="white--text">
           Centro de Atención Integral del Desarrollo Infantil
