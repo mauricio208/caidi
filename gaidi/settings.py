@@ -27,7 +27,7 @@ SECRET_KEY = '-6l$1n%en7tepp38!#-4ijr&a466g3in+0zh+3i4cd4)7k4)#*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['c5a5b405.ngrok.io', '127.0.0.1', 'localhost', '206.189.215.46', 'centrocaidi.com', 'www.centrocaidi.com']
 
 
 # Application definition
@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'webpack_loader',
     'rest_framework',
     'rest_framework_jwt',
-    'homepage',
     'corsheaders',
+    'appointments_manager.apps.AppointmentsManagerConfig'
 ]
 
 MIDDLEWARE = [

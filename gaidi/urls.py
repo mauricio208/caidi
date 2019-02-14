@@ -18,13 +18,14 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from .routers import router
+# from .routers import router
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('appointments_manager.urls')),
     path("",
         TemplateView.as_view(template_name="application.html"),
         name="app",
     ),
-    path('api/', include(router.urls))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    # path('api/', include(router.urls))
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

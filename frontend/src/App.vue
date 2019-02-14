@@ -5,7 +5,7 @@
         <v-flex xs1>
           <v-img  v-bind:src="require('@/assets/logo.png')" width=80></v-img>
         </v-flex>
-        <v-toolbar-title class="white--text">
+        <v-toolbar-title class="white--text page-title">
           Centro de Atención Integral del Desarrollo Infantil
         </v-toolbar-title>
         <v-tabs slot="extension" centered fixed-tabs color="primary" dark>
@@ -61,12 +61,18 @@ export default {
 </script>
 
 <style lang="scss">
-// #app {
-//   font-family: 'Roboto', Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   color: #2c3e50;
-// }
+#app {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+.page-title {
+  font-family: 'Noto Serif';
+  font-style: italic;
+  font-size: '20pt' !important;
+}
 
 #app-content{
   min-height: 100vh;

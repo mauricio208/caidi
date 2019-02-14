@@ -1,9 +1,8 @@
+sh build_scripts/clean_last_build.sh
 cd frontend
 npm run build
 cd ..
-python manage.py collecstatic
-cp -r homepage/ build
-cp -r manage.py build/
-cp -r public build/
-cp -r templates/ build/
+python manage.py collectstatic
+tar -czvf build.tar.gz gaidi/ homepage/ manage.py public templates/ frontend/dist frontend/webpack-stats.json
+scp build.tar.gz root@206.189.215.46:~/
 
