@@ -2,50 +2,146 @@
   <div class="citas">
     
     <v-container grid-list-xs>
-      <v-layout row wrap>
-        <v-form
-        ref="form"
-        v-model="valid"
-        lazy-validation
-        >
-          <v-text-field
-          v-model="name"
-          :counter="10"
-          :rules="nameRules"
-          label="Name"
-          required
-          ></v-text-field>
-
-          <v-text-field
-          v-model="email"
-          :rules="emailRules"
-          label="E-mail"
-          required
-          ></v-text-field>
-
-          <v-select
-          v-model="select"
-          :items="items"
-          :rules="[v => !!v || 'Item is required']"
-          label="Item"
-          required
-          ></v-select>
-
-          <v-checkbox
-          v-model="checkbox"
-          :rules="[v => !!v || 'You must agree to continue!']"
-          label="Do you agree?"
-          required
-          ></v-checkbox>
-
-          <v-btn
-          :disabled="!valid"
-          color="success"
-          @click="submit"
+      <v-layout column wrap align-center
+          justify-center>
+          <p>En pro de ofrecerle siempre la mejor atención, nuestros servicios son brindados previa cita, si desea concretar una cita de evaluación, le invitamos a hacerlo a través del siguiente formulario</p>
+          <v-form
+          ref="citaForm"
+          v-model="valid"
+          lazy-validation
           >
-          Solicitar Cita
-          </v-btn>
-        </v-form>
+            <v-layout wrap>
+              <v-flex xs6>
+                <v-text-field
+                v-model="formData.parent_name"
+                outline
+                :rules="nameRules"
+                label="Nombre completo del representante"
+                required
+                ></v-text-field>
+              </v-flex>
+              <v-flex xs6>
+                <v-text-field
+                v-model="formData.pacient_name"
+                outline
+                :rules="nameRules"
+                label="Nombre del representado"
+                required
+                ></v-text-field>
+              </v-flex>
+              <v-flex xs6>
+                <v-text-field
+                v-model="formData.email"
+                outline
+                :rules="emailRules"
+                label="E-mail de contacto"
+                required
+                ></v-text-field>
+              </v-flex>
+              <v-flex xs6>
+                <v-text-field
+                v-model="formData.phone_number"
+                outline
+                :rules="[v=> !!v]"
+                label="Número telefonico de contacto"
+                required
+                ></v-text-field>
+              </v-flex>
+
+              <v-flex xs2>
+                <v-text-field
+                v-model="formData.pacient_age"
+                outline
+                :rules="ageRules"
+                type='number'
+                label="Edad del representado"
+                required
+                ></v-text-field>
+              </v-flex>
+              <v-flex xs8>
+                <v-select
+                v-model="formData.therapy_field"
+                :items="especialidades"
+                outline
+                :rules="[v => !!v || 'Campo requerido']"
+                label="Especialidad por la que solicita la cita"
+                required
+                ></v-select>
+              </v-flex>
+              <v-flex xs2>
+                <v-select
+                v-model="formData.time_preference"
+                :items="turnos"
+                outline
+                :rules="[v => !!v || 'Campo requerido']"
+                label="Turno de preferencia"
+                required
+                ></v-select>                
+              </v-flex>
+              
+              <v-flex xs12>
+                <div class="text-xs-center">
+                  <v-btn
+                  :disabled="!valid"
+                  large
+                  @click="validate"
+                  color="success"
+                  >
+                  Solicitar Cita
+                  </v-btn>
+                  <v-dialog
+                    v-model="dialogConfirmation"
+                    width="500"
+                  >
+                    <v-card>
+                      <v-card-title
+                        class="headline grey lighten-2"
+                        primary-title
+                      >
+                        <v-icon large color="info">info</v-icon>Verifique los datos para su cita
+                      </v-card-title>
+                      <v-card-text>
+                        <p>Nombre completo del representante : {{formData.parent_name}}</p>              
+                        <p>Nombre del representado : {{formData.pacient_name}}</p>              
+                        <p>E-mail de contacto : {{formData.email}}</p>              
+                        <p>Número telefonico de contacto : {{formData.phone_number}}</p>       
+                        <p>Edad del representado : {{formData.pacient_age}}</p>             
+                        <p>Especialidad por la que solicita la cita : {{formData.therapy_field}}</p>              
+                        <p>Turno de preferencia : {{formData.time_preference}}</p>
+                      </v-card-text>
+                      <v-divider></v-divider>
+                      <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn
+                          color="primary"
+                          flat
+                          @click="submit"
+                        >
+                          Enviar Solicitud
+                        </v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
+                  
+                  <v-dialog
+                    v-model="dialogDone"
+                    width="300"
+                  >
+                    <v-card>
+                      <v-card-text>
+                        <div class="text-xs-center">
+                          <p v-bind:style="{ fontSize: 20 + 'pt' }">Solicitud Enviada</p>
+                          <v-icon large color="success">done_all</v-icon>
+                          <v-icon large color="success">email</v-icon>
+                        </div>
+                      </v-card-text>
+                    </v-card>
+                  </v-dialog>
+                </div>
+                
+              </v-flex>
+            </v-layout>
+          </v-form>
       </v-layout>
     </v-container>
         
@@ -55,33 +151,56 @@
 <script>
 export default {
   data: () => ({
+    dialogConfirmation: false,
+    dialogDone: false,
     valid: true,
-    name: '',
+    formData:{
+      parent_name: '',
+      pacient_name: '',
+      phone_number: '',
+      email: '',
+      pacient_age: '',
+      therapy_field: null,
+      time_preference: null
+    },
     nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+      v => !!v || 'Campo requerido'
     ],
-    email: '',
     emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+/.test(v) || 'E-mail must be valid'
+      v => !!v || 'Campo requerido',
+      v => /.+@.+/.test(v) || 'E-mail debe ser valido'
     ],
-    select: null,
-    items: [
-      'Item 1',
-      'Item 2',
-      'Item 3',
-      'Item 4'
+    ageRules: [
+      v => !!v || 'Campo requerido',
+      v => /\d+/.test(v)
     ],
-    checkbox: false
+    especialidades: [
+      'Terapia ocupacional',
+      'Terapia de lenguaje',
+      'Terapia de conducta',
+      'Psicopedagogía',
+      'Baby Gym',
+      'Asesoría Familiar'
+    ],
+    turnos: [
+      'AM',
+      'PM',
+    ],
+    checkoutline: false
   }),
 
   methods: {
+    validate(){
+      if(this.$refs.citaForm.validate()){
+        this.dialogConfirmation = true;
+      }
+    },
     submit () {
-      if (this.$refs.form.validate()) {
-        axios.post('/user', {
-          firstName: 'Fred',
-          lastName: 'Flintstone'
+      if (this.$refs.citaForm.validate()) {
+        this.dialogConfirmation = false
+        this.axios.post('/appointment_register/', this.formData)
+        .then(res => {          
+          this.dialogDone = true;
         })
       }
     },    

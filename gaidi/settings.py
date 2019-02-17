@@ -29,6 +29,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['c5a5b405.ngrok.io', '127.0.0.1', 'localhost', '206.189.215.46', 'centrocaidi.com', 'www.centrocaidi.com']
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'caidiautomaticservice@gmail.com'
+EMAIL_HOST_PASSWORD = 'MEBzOfce3sZuPlCL1b84'
 
 # Application definition
 
