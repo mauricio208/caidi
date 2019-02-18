@@ -19,8 +19,6 @@
 
               </v-card>
             </v-expansion-panel-content>
-          
-          
             <v-expansion-panel-content v-bind:style="panelStyle" >
               <div slot="header" class="panel-title">Terapia de lenguaje</div>
               <v-card>
@@ -36,8 +34,6 @@
 
               </v-card>
             </v-expansion-panel-content>
-          
-          
             <v-expansion-panel-content v-bind:style="panelStyle" >
               <div slot="header" class="panel-title">Terapia de conducta</div>
               <v-card>
@@ -53,8 +49,6 @@
 
               </v-card>
             </v-expansion-panel-content>
-          
-          
             <v-expansion-panel-content v-bind:style="panelStyle" >
               <div slot="header" class="panel-title">Psicopedagogía</div>
               <v-card>
@@ -70,8 +64,6 @@
 
               </v-card>
             </v-expansion-panel-content>
-          
-          
             <v-expansion-panel-content v-bind:style="panelStyle" >
               <div slot="header" class="panel-title">Baby Gym</div>
               <v-card>
@@ -87,8 +79,6 @@
 
               </v-card>
             </v-expansion-panel-content>
-          
-          
             <v-expansion-panel-content v-bind:style="panelStyle" >
               <div slot="header" class="panel-title">Asesoría Familiar</div>
               <v-card>
@@ -104,8 +94,6 @@
 
               </v-card>
             </v-expansion-panel-content>
-          
-          
             <v-expansion-panel-content v-bind:style="panelStyle" >
               <div slot="header" class="panel-title">Grupos de habilidades sociales</div>
               <v-card>
@@ -122,11 +110,9 @@
               </v-card>
             </v-expansion-panel-content>
           </v-expansion-panel>
-          
         </v-flex>
       </v-layout>
     </v-container>
-    
   </div>
 </template>
 
@@ -135,7 +121,7 @@ import theme from '@/theme'
 export default {
   name: 'servicios',
   data: () => ({
-    panelStyle:{
+    panelStyle: {
       backgroundColor: theme.accent,
       color: 'white'
     }

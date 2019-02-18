@@ -122,7 +122,23 @@
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
-                  
+                  <v-dialog
+                    v-model="dialogLoad"
+                    persistent
+                    width="300"
+                  >
+                    <v-card>
+                      <v-card-text class="overflow-hidden">
+                        <div class="text-xs-center">
+                          <v-progress-circular 
+                            indeterminate
+                            :size="100"
+                            :width="10"
+                          ></v-progress-circular>
+                        </div>
+                      </v-card-text>
+                    </v-card>
+                  </v-dialog>
                   <v-dialog
                     v-model="dialogDone"
                     width="300"
@@ -137,8 +153,7 @@
                       </v-card-text>
                     </v-card>
                   </v-dialog>
-                </div>
-                
+                </div>                
               </v-flex>
             </v-layout>
           </v-form>
@@ -153,6 +168,7 @@ export default {
   data: () => ({
     dialogConfirmation: false,
     dialogDone: false,
+    dialogLoad: false,
     valid: true,
     formData:{
       parent_name: '',
@@ -198,8 +214,10 @@ export default {
     submit () {
       if (this.$refs.citaForm.validate()) {
         this.dialogConfirmation = false
+        this.dialogLoad = true
         this.axios.post('/appointment_register/', this.formData)
-        .then(res => {          
+        .then(res => {
+          this.dialogLoad = false;    
           this.dialogDone = true;
         })
       }
