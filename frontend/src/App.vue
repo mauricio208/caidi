@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app v-bind:style="styleObject">
-      <v-toolbar app color="primary" height=110 extension-height=50>
+      <v-toolbar app color="primary" height=110 extension-height=50 scroll-off-screen scroll-threshold=30>
         <v-flex xs1>
           <v-img  v-bind:src="require('@/assets/logo.png')" width=80></v-img>
         </v-flex>
@@ -71,12 +71,11 @@ export default {
 .page-title {
   font-family: 'Noto Serif';
   font-style: italic;
-  font-size: '20pt' !important;
 }
 
 #app-content{
   min-height: 100vh;
-  font-size: 16pt;
+  font-size: 14pt;
   text-align: justify;
 }
 

@@ -2,10 +2,16 @@
   <v-container fill-height>
     <v-layout column wrap>
       <v-layout align-center justify-space-around row >
-        <v-flex xs4 align-self-center px-3>
-          <v-img  v-bind:src="require('@/assets/logo.png')" max-width=400 ></v-img>
+        <v-flex xs7 align-self-center px-3>
+          <v-carousel hide-delimiters>
+            <v-carousel-item
+              v-for="(item,i) in carouselImages"
+              :key="i"
+              :src="item.src"
+            ></v-carousel-item>
+          </v-carousel>
         </v-flex>
-        <v-flex xs8>
+        <v-flex xs5>
           <v-card id='quienesomostext' elevation=24 class="font-weight-light">
             <v-card-text >
               <p>
@@ -66,7 +72,16 @@ export default {
       {id: 2, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:'fondo2.jpg'},
       {id: 3, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:'fondo2.jpg'},
       {id: 4, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:'fondo2.jpg'},
-      {id: 5, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:'fondo2.jpg'}
+      {id: 5, nombre: 'Belkis Pernía C.', rol:'Terapeuta Ocupacional', descripcion:'Psicopedagoga. Educación Especial, Dificultades del Aprendizaje.\nProfesora de Educación Integral.\nMagíster Scientiarium en Tecnología Educativa.\nDiplomado en T.E.Autista.', avatar:'fondo2.jpg'}
+    ],
+    carouselImages: [
+      {src:require('@/assets/images/quienesomos/carousel/cr1.png')},
+      {src:require('@/assets/images/quienesomos/carousel/cr2.png')},
+      {src:require('@/assets/images/quienesomos/carousel/cr3.png')},
+      {src:require('@/assets/images/quienesomos/carousel/cr4.png')},
+      {src:require('@/assets/images/quienesomos/carousel/cr5.png')},
+      {src:require('@/assets/images/quienesomos/carousel/cr6.png')},
+      {src:require('@/assets/images/quienesomos/carousel/cr7.png')},
     ]
   })
 }
