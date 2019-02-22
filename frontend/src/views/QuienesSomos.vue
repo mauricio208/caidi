@@ -75,13 +75,13 @@ export default {
       {id: 5, nombre: 'Belkis Pernía C.', rol:'Terapeuta Ocupacional', descripcion:'Psicopedagoga. Educación Especial, Dificultades del Aprendizaje.\nProfesora de Educación Integral.\nMagíster Scientiarium en Tecnología Educativa.\nDiplomado en T.E.Autista.', avatar:'fondo2.jpg'}
     ],
     carouselImages: [
-      {src:require('@/assets/images/quienesomos/carousel/cr1.png')},
-      {src:require('@/assets/images/quienesomos/carousel/cr2.png')},
-      {src:require('@/assets/images/quienesomos/carousel/cr3.png')},
-      {src:require('@/assets/images/quienesomos/carousel/cr4.png')},
-      {src:require('@/assets/images/quienesomos/carousel/cr5.png')},
-      {src:require('@/assets/images/quienesomos/carousel/cr6.png')},
-      {src:require('@/assets/images/quienesomos/carousel/cr7.png')},
+      {src:require('@/assets/images/quienesomos/carousel/cr1.jpg')},
+      {src:require('@/assets/images/quienesomos/carousel/cr2.jpg')},
+      {src:require('@/assets/images/quienesomos/carousel/cr3.jpg')},
+      {src:require('@/assets/images/quienesomos/carousel/cr4.jpg')},
+      {src:require('@/assets/images/quienesomos/carousel/cr5.jpg')},
+      {src:require('@/assets/images/quienesomos/carousel/cr6.jpg')},
+      {src:require('@/assets/images/quienesomos/carousel/cr7.jpg')},
     ]
   })
 }
