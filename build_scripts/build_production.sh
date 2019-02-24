@@ -3,6 +3,6 @@ cd frontend
 npm run build
 cd ..
 python manage.py collectstatic
-tar -czvf build.tar.gz gaidi/ homepage/ manage.py public templates/ frontend/dist frontend/webpack-stats.json
+tar -czvf build.tar.gz gaidi/ appointments_manager/ manage.py public templates/ frontend/webpack-stats.json
 scp build.tar.gz root@206.189.215.46:~/
 

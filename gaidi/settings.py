@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+DEBUG = True
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,18 +23,25 @@ FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend')
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-6l$1n%en7tepp38!#-4ijr&a466g3in+0zh+3i4cd4)7k4)#*'
+if DEBUG:
+    SECRET_KEY = '-6l$1n%en7tepp38!#-4ijr&a466g3in+0zh+3i4cd4)7k4)#*'
+    EMAIL_HOST_USER = ''
+    EMAIL_HOST_PASSWORD = ''
+else:
+    SECRET_KEY = os.environ['SECRET_KEY']
+    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
+    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = ['c5a5b405.ngrok.io', '127.0.0.1', 'localhost', '206.189.215.46', 'centrocaidi.com', 'www.centrocaidi.com']
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'caidiautomaticservice@gmail.com'
-EMAIL_HOST_PASSWORD = 'MEBzOfce3sZuPlCL1b84'
+
 
 # Application definition
 

@@ -27,8 +27,7 @@ def appointment_register(request):
         '[CAIDI] CITA {}'.format(request.data['therapy_field']),       
         email_body,
         None,
-        # ['terapiascaidi@gmail.com','mauricio208@gmail.com'],
-        ['mauricio208@gmail.com'],
+        ['terapiascaidi@gmail.com'],
         fail_silently=False,
         )
         return Response(serializer.data, status=status.HTTP_201_CREATED)
