@@ -40,7 +40,7 @@
                 <v-avatar
                   :size="90"
                 >
-                  <img v-bind:src="require('@/assets/'+t.avatar)" alt="alt">
+                  <img v-bind:src="t.avatar" alt="alt">
                 </v-avatar>
               <v-flex xs7>
                 <v-card-title primary-title>
@@ -68,16 +68,15 @@ export default {
   name: 'quiensomos',
   data: ()=> ({
     equipo:[
-      {id: 1, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:'fondo2.jpg'},
-      {id: 2, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:'fondo2.jpg'},
-      {id: 3, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:'fondo2.jpg'},
-      {id: 4, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:'fondo2.jpg'},
-      {id: 5, nombre: 'Belkis Pernía C.', rol:'Terapeuta Ocupacional', descripcion:'Psicopedagoga. Educación Especial, Dificultades del Aprendizaje.\nProfesora de Educación Integral.\nMagíster Scientiarium en Tecnología Educativa.\nDiplomado en T.E.Autista.', avatar:'fondo2.jpg'}
+      {id: 1, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Diplomado en psicomotricidad, Diplomado en alteraciones del desarrollo infantil, Certificación en Estimulación Temprana, Certificación en ABA Tech. Especialista en grafomotricidad', avatar:require('@/assets/images/quienesomos/stephy.jpeg')},
+      {id: 2, nombre: 'Anly Mata', rol:'Psicólogo Clínico', descripcion:'Especialista en descarte de autismo y modificación conductual', avatar:require('@/assets/images/quienesomos/anly.jpeg')},
+      {id: 3, nombre: 'Alejandra Hernandez', rol:'Terapeuta de lenguaje', descripcion:' Lic en educ. Especial. Msc en modificación de conducta,Diplomado: estimulación temprana Autismo. Trastornos del Desarrollo. Modificación de Conducta, Certificación en Escuela para Padres', avatar:require('@/assets/images/quienesomos/stephy.jpeg')},
+      {id: 4, nombre: 'Belkis Pernía C.', rol:'Terapeuta Ocupacional', descripcion:'Psicopedagoga. Educación Especial, Dificultades del Aprendizaje.\nProfesora de Educación Integral.\nMagíster Scientiarium en Tecnología Educativa.\nDiplomado en T.E.Autista.', avatar:require('@/assets/images/quienesomos/belkys.jpeg')},
+      // {id: 5, nombre: 'Barbara Rojas', rol:'Terapeuta Ocupacional', descripcion:'Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', avatar:require('@/assets/images/quienesomos/stephy.jpeg')},
     ],
     carouselImages: [
       {src:require('@/assets/images/quienesomos/carousel/cr1.jpg')},
       {src:require('@/assets/images/quienesomos/carousel/cr2.jpg')},
-      {src:require('@/assets/images/quienesomos/carousel/cr3.jpg')},
       {src:require('@/assets/images/quienesomos/carousel/cr4.jpg')},
       {src:require('@/assets/images/quienesomos/carousel/cr5.jpg')},
       {src:require('@/assets/images/quienesomos/carousel/cr6.jpg')},

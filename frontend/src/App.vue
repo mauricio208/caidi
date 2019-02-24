@@ -24,14 +24,16 @@
       <v-footer dark height="auto">
         <v-card flat tile class="indigo lighten-1 white--text text-xs-center">
           <v-card-text>
-            <!-- <v-btn
-              v-for="icon in icons"
-              :key="icon"
+
+            <v-btn icon><v-icon>fas fa-envelope</v-icon></v-btn>
+             terapiascaidi@gmail.com
+            <v-btn
+              href='https://www.instagram.com/centrocaidi/'
               class="mx-3 white--text"
               icon
             >
-              <v-icon size="24px">{{ icon }}</v-icon>
-            </v-btn> -->
+              <v-icon  size="24px">fab fa-instagram</v-icon>
+            </v-btn>
           </v-card-text>
 
           <v-card-text class="white--text pt-0">
