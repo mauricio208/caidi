@@ -30,5 +30,5 @@ def appointment_register(request):
         ['terapiascaidi@gmail.com'],
         fail_silently=False,
         )
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response('APPOINTMENT SEND', status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

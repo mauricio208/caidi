@@ -22,30 +22,59 @@
           <router-view></router-view>
       </v-content>
       <v-footer dark height="auto">
-        <v-card flat tile class="indigo lighten-1 white--text text-xs-center">
-          <v-card-text>
-
-            <v-btn icon><v-icon>fas fa-envelope</v-icon></v-btn>
-             terapiascaidi@gmail.com
-            <v-btn
-              href='https://www.instagram.com/centrocaidi/'
-              class="mx-3 white--text"
-              icon
+        <v-flex xs12>
+          <v-card flat tile class="indigo lighten-1 white--text text-xs-center">
+            <v-layout
+              justify-center
+              row
+              wrap
             >
-              <v-icon  size="24px">fab fa-instagram</v-icon>
-            </v-btn>
-          </v-card-text>
+              <v-card-text>
+                <v-btn icon><v-icon>fas fa-envelope</v-icon></v-btn>
+                terapiascaidi@gmail.com
+                <v-btn
+                  href='https://www.instagram.com/centrocaidi/'
+                  class="mx-3 white--text"
+                  icon
+                >
+                  <v-icon  size="24px">fab fa-instagram</v-icon>
+                </v-btn>
+              </v-card-text>
+              <v-flex xs12>
+              <v-divider></v-divider>
+                
+              </v-flex>
+              <v-flex xs6>
+                <v-card-text class="white--text">
+                    <v-btn color="tertiary" id="tab-somos" to="/" > Quiénes somos </v-btn>
+                    <v-btn color="tertiary" id="tab-vm" to="/vm" >  Misión y Visión </v-btn>
+                    <v-btn color="tertiary" id="tab-serv" to="/serv" >  Servicios</v-btn>
+                    <v-btn color="tertiary" id="tab-inst" to="/inst" >  Instalaciones</v-btn>
+                    <v-btn color="tertiary" id="tab-ubic" to="/ubic" >  Ubicación</v-btn>
+                    <v-btn color="tertiary" id="tab-citas" to="/citas" > Citas</v-btn>
+                    <v-btn color="tertiary" id="tab-conta" to="/contacto" > Contacto</v-btn>
+                </v-card-text>
+              </v-flex>
+              <v-flex xs6>
+                <v-card-text class="white--text">
+                    <v-icon color="tertiary" size=20>fas fa-phone</v-icon>
+                    ¿Estas interesado en hablar directamente con nosotros?, contactanos a los siguientes numeros:
+                    <span class="font-weight-light">
+                        <span>0424 8175669</span><br>
+                        <span>0412 5747165</span>
+                    </span>
 
-          <v-card-text class="white--text pt-0">
-            Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          </v-card-text>
+                </v-card-text>
+              </v-flex>
 
-          <v-divider></v-divider>
+              <v-divider></v-divider>
 
-          <v-card-text class="white--text">
-            &copy;2019 — <strong>CAIDI</strong>
-          </v-card-text>
-        </v-card>
+              <v-card-text class="white--text">
+                &copy;2019 — <strong>CAIDI</strong>
+              </v-card-text>
+            </v-layout>
+          </v-card>  
+        </v-flex>
       </v-footer>
     </v-app>
   </div>
