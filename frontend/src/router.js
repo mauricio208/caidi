@@ -11,6 +11,7 @@ import Contacto from './views/Contacto.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
