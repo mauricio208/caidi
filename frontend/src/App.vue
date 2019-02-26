@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <v-app v-bind:style="styleObject">
-      <v-toolbar app color="primary" height=110 extension-height=50 scroll-off-screen scroll-threshold=30>
+      <v-toolbar app color="primary" height=110 extension-height=50 scroll-threshold=30 scroll-off-screen  >
         <v-flex xs1>
           <v-img  v-bind:src="require('@/assets/logo.png')" width=80></v-img>
         </v-flex>

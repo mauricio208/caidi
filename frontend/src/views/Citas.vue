@@ -147,10 +147,26 @@
                       <v-card-text>
                         <div class="text-xs-center">
                           <p v-bind:style="{ fontSize: 20 + 'pt' }">Solicitud Enviada</p>
-                          <v-icon large color="success">done_all</v-icon>
-                          <v-icon large color="success">email</v-icon>
+                          <v-icon large color="success">far fa-check-circle</v-icon>
+                          <v-icon large color="success">fas fa-envelope</v-icon>
                         </div>
                       </v-card-text>
+                    </v-card>
+                  </v-dialog>
+                  <v-dialog
+                    v-model="dialogError"
+                    width="300"
+                  >
+                    <v-card>
+                      <v-card-text>
+                        <div class="text-xs-center">
+                          <v-icon large color="red">fas fa-exclamation-triangle</v-icon>
+                          <p v-bind:style="{ fontSize: 12 + 'pt'}">Ocurrio un error interno y su solicitud no pudo ser procesada, considere contactarnos por otro medio, gracias por su comprensión</p>
+                        </div>
+                      </v-card-text>
+                      <v-card-actions class="justify-center">
+                        <v-btn to='/contacto'>Contactanos</v-btn>
+                      </v-card-actions>
                     </v-card>
                   </v-dialog>
                 </div>                
@@ -169,6 +185,7 @@ export default {
     dialogConfirmation: false,
     dialogDone: false,
     dialogLoad: false,
+    dialogError: false,
     valid: true,
     formData:{
       parent_name: '',
@@ -215,10 +232,15 @@ export default {
       if (this.$refs.citaForm.validate()) {
         this.dialogConfirmation = false
         this.dialogLoad = true
-        this.axios.post('/appointment_register/', this.formData)
+        var csrftoken = this.$cookies.get('csrftoken');
+        this.axios.post('/appointment_register/', this.formData, {'headers': {X_CSRFTOKEN: csrftoken}})
         .then(res => {
           this.dialogLoad = false;    
           this.dialogDone = true;
+        })
+        .catch(erro => {
+          this.dialogLoad = false;
+          this.dialogError = true;
         })
       }
     },    
