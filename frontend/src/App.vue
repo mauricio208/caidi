@@ -58,7 +58,7 @@
               <v-flex xs6>
                 <v-card-text class="white--text">
                     <v-icon color="tertiary" size=20>fas fa-phone</v-icon>
-                    ¿Estas interesado en hablar directamente con nosotros?, contactanos a los siguientes numeros:
+                    ¿Estas interesado en hablar directamente con nosotros?, contactanos a los siguientes numeros: <br>
                     <span class="font-weight-light">
                         <span>0424 8175669</span><br>
                         <span>0412 5747165</span>

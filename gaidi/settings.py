@@ -36,7 +36,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ['c5a5b405.ngrok.io', '127.0.0.1', 'localhost', '206.189.215.46', 'centrocaidi.com', 'www.centrocaidi.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '206.189.215.46', 'centrocaidi.com', 'www.centrocaidi.com']
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -67,8 +67,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',   
 ]
 
 CORS_ORIGIN_WHITELIST = (
@@ -163,14 +162,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
     ),
 }
-
-# WEBPACK_LOADER = {
-#     'DEFAULT': {
-#         'CACHE': DEBUG,
-#         'BUNDLE_DIR_NAME': '/bundles/',  # must end with slash
-#         'STATS_FILE': os.path.join(FRONTEND_DIR, 'webpack-stats.json'),
-#     }
-# }
 
 WEBPACK_LOADER = {
   'DEFAULT': {

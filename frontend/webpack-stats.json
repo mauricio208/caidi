@@ -1,1 +1,1 @@
-{"status":"done","publicPath":"http://0.0.0.0:8080/","chunks":{"app":[{"name":"app.js","publicPath":"http://0.0.0.0:8080/app.js","path":"/home/mauricio/gaidi/frontend/dist/app.js"},{"name":"app.7de9b44a57dc808ca530.hot-update.js","publicPath":"http://0.0.0.0:8080/app.7de9b44a57dc808ca530.hot-update.js","path":"/home/mauricio/gaidi/frontend/dist/app.7de9b44a57dc808ca530.hot-update.js"}]}}
+{"status":"done","publicPath":"http://0.0.0.0:8080/","chunks":{"app":[{"name":"app.js","publicPath":"http://0.0.0.0:8080/app.js","path":"/home/mauricio/gaidi/frontend/dist/app.js"}]}}
